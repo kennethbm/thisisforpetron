@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About Us - Responsive</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .icon-circle {
+      width: 30px;
+      height: 30px;
+      background-color: #000;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: #f8f9fa;
+      border-top: 1px solid #ccc;
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 0;
+    }
+
+    .bottom-nav div::before {
+      content: "⬤";
+      display: block;
+      font-size: 18px;
+      margin-bottom: 5px;
+      text-align: center;
+    }
+	
+	.bottom-nav div.active {
+  color: #007bff;
+  font-weight: bold;
+}
+
+
+    body {
+      padding-bottom: 70px; /* space for bottom nav */
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      border: 2px solid #000;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light px-3">
+    <div class="d-flex align-items-center">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Logo_of_Petron.svg" 
+           alt="Petron Logo" style="height: 100px;">
+    </div>
+    <div class="ms-auto">
+  <a class="nav-link d-inline" href="summative3.html">Home</a>
+  <a class="nav-link d-inline fw-bold" href="aboutuspage.html">About us</a>
+  <a class="nav-link d-inline" href="products.html">Products & Services</a>
+</div>
+
+  </nav>
+
+  <div class="container my-4">
+
+    <div class="d-flex align-items-center mb-3">
+      <div class="icon-circle me-2"></div>
+      <h4 class="mb-0">👥About us</h4>
+    </div>
+
+    <div class="row mb-4">
+      <div class="col-md-7">
+        <h5>About us</h5>
+        <p>
+          Petron Corporation is the largest oil company in the Philippines, operating the country's only remaining refinery. Also a leading player in the Malaysian market, we have a combined refining capacity of 268,000 barrels per day, producing a full range of world-class fuels and petrochemicals to fuel the lives of millions of Filipinos and Malaysians.
+        </p>
+      </div>
+      <div class="col-md-5">
+        <img src="https://www.petron.com/wp-content/uploads/2018/05/Deregulation-and-Privatization-1.jpg" alt="About Petron">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-7">
+        <h5>History</h5>
+        <p>
+          Petron traces its rich heritage to September 7, 1933 when Socony Vacuum Oil Company of New York and the Standard Oil Company of New Jersey merged to form the Standard Vacuum Oil Company or Stanvac. After suspending operations in World War II, Stanvac promptly resumed its operations in 1945 and helped rebuild a newly-independent nation.
+        </p>
+      </div>
+      <div class="col-md-5">
+        <img src="https://www.petron.com/wp-content/uploads/2018/05/A3-About-Us-Timeline-1988.jpg" alt="Petron History">
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom-nav text-center">
+    <div>Home</div>
+    <div>Menu</div>
+    <div>Cart</div>
+    <div>Settings</div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <script>
+
+  document.querySelectorAll('.bottom-nav div').forEach(item => {
+    item.addEventListener('click', () => {
+  
+      document.querySelectorAll('.bottom-nav div').forEach(nav => nav.classList.remove('active'));
+
+      item.classList.add('active');
+
+      console.log('Selected:', item.textContent.trim());
+    });
+  });
+</script>
+
+</body>
+</html>
